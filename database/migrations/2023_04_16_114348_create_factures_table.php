@@ -36,25 +36,11 @@ return new class extends Migration
             $table->double('montant_penalite');
             $table->double('montant_cumul_momo');
             $table->date('date_dernier_paiement_momo')->date_format('dd-mm-YYYY');
-            $table->string('num_point_livraison'); //foreignKey
-            $table->unsignedInteger('code_categorie');
+            $table->string('num_abonnement'); //foreignKey
             $table->unsignedInteger('code_periode');
-            $table->string('num_abonnement');
-            $table->unsignedInteger('num_agence');
-            $table->string('num_compteur');
-            $table->unsignedInteger('num_direction');
-            $table->string('code_secteur');
-            $table->string('num_abonne');
             $table->timestamps();
-            $table->foreign('num_point_livraison')->references('num_point_livraison')->on('point_livraisons');
-            $table->foreign('code_categorie')->references('code_categorie')->on('categories');
-            $table->foreign('code_periode')->references('code_periode')->on('periode_facturations');
             $table->foreign('num_abonnement')->references('num_abonnement')->on('abonnements');
-            $table->foreign('num_agence')->references('numero_agence')->on('agences');
-            $table->foreign('num_compteur')->references('numero_compteur')->on('compteurs');
-            $table->foreign('num_direction')->references('numero_direction')->on('directions');
-            $table->foreign('code_secteur')->references('code_secteur')->on('secteurs');
-            $table->foreign('num_abonne')->references('numero_abonne')->on('abonnes');
+            $table->foreign('code_periode')->references('code_periode')->on('periode_facturations');
         });
     }
 

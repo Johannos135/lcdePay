@@ -20,7 +20,9 @@ return new class extends Migration
             $table->string('prenom_proprietaire');
             $table->string('adresse');
             $table->string('quartier');
+            $table->string('num_branchemment'); //foreign
             $table->timestamps();
+            $table->foreign('num_branchemment')->references('num_branchemment')->on('branchements');
             $table->softDeletes();
         });
     }

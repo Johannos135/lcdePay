@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('compteurs', function (Blueprint $table) {
-            $table->string('numero_compteur')->primary();
-            $table->string('num_branchemment'); //foreignKey
+        Schema::create('rythme_facturations', function (Blueprint $table) {
+            $table->id();
+            $table->string('libelle');
             $table->timestamps();
-            $table->foreign('num_branchemment')->references('num_branchemment')->on('branchements');
-            $table->softDeletes();
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('compteurs');
+        Schema::dropIfExists('rythme_facturations');
     }
 };
