@@ -21,7 +21,7 @@
                         <div class="d-flex">
                             <div class="mt-2 p-1">
                                 <h4 class="">Vous devez au total</h4>
-                                <h1 class="mb-2 number-font text-danger">0</h1>
+                                <h1 class="mb-2 number-font text-danger"><i class="fa fa-credit-card"></i>&nbsp;&nbsp; 0 FCFA</h1>
                             </div>
                         </div>
                         <span class="text-muted fs-12"><span class="text-secondary"><i class="fe fe-arrow-up-circle"></i> Total des impayés</span>
@@ -34,6 +34,7 @@
                     <div class="card-body">
                         <h4 class="">Information du client</h4>
                         <div class="d-flex">
+                            <h2 class="m-2 h1"><i class="fe fe-user"></i></h2>
                             <div class="m-2 mr-2">
                                 <ul>
                                     <li>N° Client: xxx xxxxxxx xxx</li>

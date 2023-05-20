@@ -66,7 +66,7 @@
                                     <div class="switch-toggle d-flex">
                                         <span class="me-auto">Light Primary</span>
                                         <div class="">
-                                            <input class="w-30p h-30 input-color-picker color-primary-light" value="#6c5ffc" id="colorID" type="color" data-id="bg-color" data-id1="bg-hover" data-id2="bg-border" data-id7="transparentcolor" name="lightPrimary">
+                                            <input class="w-30p h-30 input-color-picker color-primary-light" value="#28a3ddc" id="colorID" type="color" data-id="bg-color" data-id1="bg-hover" data-id2="bg-border" data-id7="transparentcolor" name="lightPrimary">
                                         </div>
                                     </div>
                                 </div>
@@ -85,8 +85,7 @@
                                     <div class="switch-toggle d-flex mt-2">
                                         <span class="me-auto">Dark Primary</span>
                                         <div class="">
-                                            <input class="w-30p h-30 input-dark-color-picker color-primary-dark" value="#6c5ffc" id="darkPrimaryColorID" type="color" data-id="bg-color" data-id1="bg-hover" data-id2="bg-border" data-id3="primary" data-id8="transparentcolor"
-                                                name="darkPrimary">
+                                            <input class="w-30p h-30 input-dark-color-picker color-primary-dark" value="#28a3ddc" id="darkPrimaryColorID" type="color" data-id="bg-color" data-id1="bg-hover" data-id2="bg-border" data-id3="primary" data-id8="transparentcolor" name="darkPrimary">
                                         </div>
                                     </div>
                                 </div>
@@ -105,14 +104,13 @@
                                     <div class="switch-toggle d-flex mt-2">
                                         <span class="me-auto">Transparent Primary</span>
                                         <div class="">
-                                            <input class="w-30p h-30 input-transparent-color-picker color-primary-transparent" value="#6c5ffc" id="transparentPrimaryColorID" type="color" data-id="bg-color" data-id1="bg-hover" data-id2="bg-border" data-id3="primary"
-                                                data-id4="primary" data-id9="transparentcolor" name="tranparentPrimary">
+                                            <input class="w-30p h-30 input-transparent-color-picker color-primary-transparent" value="#28a3ddc" id="transparentPrimaryColorID" type="color" data-id="bg-color" data-id1="bg-hover" data-id2="bg-border" data-id3="primary" data-id4="primary" data-id9="transparentcolor" name="tranparentPrimary">
                                         </div>
                                     </div>
                                     <div class="switch-toggle d-flex mt-2">
                                         <span class="me-auto">Transparent Background</span>
                                         <div class="">
-                                            <input class="w-30p h-30 input-transparent-color-picker color-bg-transparent" value="#6c5ffc" id="transparentBgColorID" type="color" data-id5="body" data-id6="theme" data-id9="transparentcolor" name="transparentBackground">
+                                            <input class="w-30p h-30 input-transparent-color-picker color-bg-transparent" value="#28a3ddc" id="transparentBgColorID" type="color" data-id5="body" data-id6="theme" data-id9="transparentcolor" name="transparentBackground">
                                         </div>
                                     </div>
                                 </div>
@@ -124,14 +122,14 @@
                                 <div class="switch-toggle d-flex">
                                     <span class="me-auto">Bg-Image Primary</span>
                                     <div class="">
-                                        <input class="w-30p h-30 input-transparent-color-picker color-primary-transparent" value="#7e44d5" id="transparentBgImgPrimaryColorID" type="color" data-id="bg-color" data-id1="bg-hover" data-id2="bg-border" data-id3="primary" data-id4="primary"  data-id9="transparentcolor" name="tranparentPrimary">
+                                        <input class="w-30p h-30 input-transparent-color-picker color-primary-transparent" value="#7e44d5" id="transparentBgImgPrimaryColorID" type="color" data-id="bg-color" data-id1="bg-hover" data-id2="bg-border" data-id3="primary" data-id4="primary" data-id9="transparentcolor" name="tranparentPrimary">
                                     </div>
                                 </div>
                                 <div class="switch-toggle d-flex mt-2">
-                                    <a class="bg-img1 bg-img" href="javascript:void(0);"><img src="{{asset('assets/images/media/bg-img1.jpg')}}"  alt="Bg-Image" id="bgimage1"></a>
-                                    <a class="bg-img2 bg-img" href="javascript:void(0);"><img src="{{asset('assets/images/media/bg-img2.jpg')}}"  alt="Bg-Image"  id="bgimage2"></a>
-                                    <a class="bg-img3 bg-img" href="javascript:void(0);"><img src="{{asset('assets/images/media/bg-img3.jpg')}}"  alt="Bg-Image" id="bgimage3"></a>
-                                    <a class="bg-img4 bg-img" href="javascript:void(0);"><img src="{{asset('assets/images/media/bg-img4.jpg')}}"  alt="Bg-Image" id="bgimage4"></a>
+                                    <a class="bg-img1 bg-img" href="javascript:void(0);"><img src="{{asset('assets/images/media/bg-img1.jpg')}}" alt="Bg-Image" id="bgimage1"></a>
+                                    <a class="bg-img2 bg-img" href="javascript:void(0);"><img src="{{asset('assets/images/media/bg-img2.jpg')}}" alt="Bg-Image" id="bgimage2"></a>
+                                    <a class="bg-img3 bg-img" href="javascript:void(0);"><img src="{{asset('assets/images/media/bg-img3.jpg')}}" alt="Bg-Image" id="bgimage3"></a>
+                                    <a class="bg-img4 bg-img" href="javascript:void(0);"><img src="{{asset('assets/images/media/bg-img4.jpg')}}" alt="Bg-Image" id="bgimage4"></a>
                                 </div>
                             </div>
                         </div>
@@ -284,7 +282,7 @@
                             <div class="skin-body">
                                 <div class="switch_section my-4">
                                     <button class="btn btn-danger btn-block resetCustomStyles" type="button">Reset All
-									</button>
+                                    </button>
                                 </div>
                             </div>
                         </div>

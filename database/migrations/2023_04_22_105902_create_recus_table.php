@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('recus', function (Blueprint $table) {
             $table->string('num_recu')->primary();
-            $table->string('type_recu');
+            $table->string('type_recu')->nullable();
             $table->double('montant_recu');
-            $table->double('rendu_monnaie');
+            $table->double('rendu_monnaie')->nullable();
             //foreign
-            $table->unsignedInteger('caissiere_id');
+            $table->unsignedInteger('caissiere_id')->nullable();
             $table->string('numero_abonne');
             $table->string('numero_compte');
             $table->string('numero_facture');

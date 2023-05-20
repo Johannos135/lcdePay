@@ -4,10 +4,10 @@
                 <div class="app-sidebar">
                     <div class="side-header">
                         <a class="header-brand1" href="{{url('index')}}">
-                            <img src="../assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
-                            <img src="../assets/images/brand/logo-1.png" class="header-brand-img toggle-logo" alt="logo">
-                            <img src="../assets/images/brand/logo-2.png" class="header-brand-img light-logo" alt="logo">
-                            <img src="../assets/images/brand/logo-3.png" class="header-brand-img light-logo1" alt="logo">
+                            <img src="../assets/images/brand/logo_lcde.png" class="header-brand-img desktop-logo" width="80px" height="70px" alt="logo">
+                            <img src="../assets/images/brand/logo_lcde.png" class="header-brand-img toggle-logo" width="80px" height="70px" alt="logo">
+                            <img src="../assets/images/brand/logo_lcde.png" class="header-brand-img light-logo" width="80px" height="70px" alt="logo">
+                            <img src="../assets/images/brand/logo_lcde-3.png" class="header-brand-img light-logo1" width="80px" height="70px" alt="logo">
                         </a>
                         <!-- LOGO -->
                     </div>
@@ -21,9 +21,9 @@
                             </li>
                             <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="{{url('index')}}"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Dashboard</span></a>
-                                <a class="side-menu__item" data-bs-toggle="slide" href="{{url('index')}}"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Mes abonnements</span></a>
-                                <a class="side-menu__item" data-bs-toggle="slide" href="{{url('index')}}"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Mes factures</span></a>
-                                <a class="side-menu__item" data-bs-toggle="slide" href="{{url('index')}}"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Mes paiements</span></a>
+                                <a class="side-menu__item" data-bs-toggle="slide" href="{{url('index')}}"><i class="side-menu__icon fe fe-users"></i><span class="side-menu__label">Mes abonnements</span></a>
+                                <a class="side-menu__item" data-bs-toggle="slide" href="{{url('index')}}"><i class="side-menu__icon fa fa-newspaper-o"></i><span class="side-menu__label">Mes factures</span></a>
+                                <a class="side-menu__item" data-bs-toggle="slide" href="{{url('index')}}"><i class="side-menu__icon fa fa-credit-card"></i><span class="side-menu__label">Mes paiements</span></a>
                             </li>
 
                         </ul>

@@ -15,13 +15,15 @@ return new class extends Migration
     {
         Schema::create('compte_momos', function (Blueprint $table) {
             $table->string('numero_compte')->primary();
-            $table->string('operateur');
-            $table->string('nom_client');
-            $table->string('prenom_client');
-            $table->double('depot_cumule');
-            $table->double('retenu_cumule');
+            $table->string('operateur')->nullable();
+            $table->string('numero_abonne'); //foreignKey
+            // $table->string('nom_client');
+            // $table->string('prenom_client')->nullable();
+            $table->double('depot_cumule')->nullable();
+            $table->double('retenu_cumule')->nullable();
             $table->timestamps();
             $table->softDeletes();
+            $table->foreign('numero_abonne')->references('numero_abonne')->on('abonnes');
         });
     }
 
