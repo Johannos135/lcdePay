@@ -4,12 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Facture extends Model
 {
     use HasFactory;
-    use SoftDeletes;
+//    use SoftDeletes;
     protected $guarded = [];
 
 
@@ -23,5 +25,20 @@ class Facture extends Model
         static::creating(function ($model) {
             $model->incrementing = false;
         });
+    }
+
+    public function recus(): BelongsToMany
+    {
+        return $this->belongsToMany(Recu::class, 'facture_recus', 'numero_facture', 'num_recu')->withTimestamps();
+    }
+
+    private function abonnement(): belongsTo
+    {
+        return $this->belongsTo(Abonnement::class, 'num_abonnement', 'num_abonnement');
+    }
+
+    private function secteur(): belongsTo
+    {
+        return $this->belongsTo(Secteur::class, 'code_secteur', 'code_secteur');
     }
 }

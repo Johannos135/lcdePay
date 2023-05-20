@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'lcde',
+
     ],
 
     /*
@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'lcde' => [
+            'driver' => 'session',
+            'provider' => 'abonnes',
+        ],
     ],
 
     /*
@@ -63,6 +67,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'abonnes' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Abonne::class,
         ],
 
         // 'users' => [
@@ -93,6 +101,7 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+        'lcde' => null
     ],
 
     /*

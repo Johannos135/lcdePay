@@ -13,14 +13,14 @@ class Categorie extends Model
     protected $guarded = [];
 
     protected $primaryKey = 'code_categorie';
-    protected $keyType = 'numeric';
+    // protected $keyType = 'bigInt';
 
     protected static function boot()
     {
         parent::boot();
 
         static::creating(function ($model) {
-            $model->incrementing = false;
+            $model->incrementing = true;
         });
     }
 }

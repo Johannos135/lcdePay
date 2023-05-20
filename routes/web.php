@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AbonneController;
+use App\Http\Controllers\AbonnementController;
 use App\Http\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get(
-    '/',
-    [Dashboard::class, 'render']
-);
+Route::middleware('subscriber')->group(function () {
+    Route::get(
+        '/',
+        [Dashboard::class, 'render']
+    )->name('dashboard');
+    Route::get(
+        '/abonnements',
+        [AbonnementController::class, 'index']
+    )->name('abonnement');
+});
+
+Route::get('login', [AbonneController::class, 'showLoginForm'])->name('login');
+Route::post('login', [AbonneController::class, 'login']);

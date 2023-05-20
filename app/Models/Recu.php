@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Recu extends Model
@@ -22,5 +23,10 @@ class Recu extends Model
         static::creating(function ($model) {
             $model->incrementing = false;
         });
+    }
+
+    public function factures(): BelongsToMany
+    {
+        return $this->belongsToMany(Facture::class, 'facture_recus', 'num_recu', 'numero_facture')->withTimestamps();
     }
 }

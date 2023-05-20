@@ -21,7 +21,7 @@
                         <div class="d-flex">
                             <div class="mt-2 p-1">
                                 <h4 class="">Vous devez au total</h4>
-                                <h1 class="mb-2 number-font text-danger"><i class="fa fa-credit-card"></i>&nbsp;&nbsp; 0 FCFA</h1>
+                                <h1 class="mb-2 number-font text-danger"><i class="fa fa-credit-card"></i>&nbsp;&nbsp; {{$sum}} FCFA</h1>
                             </div>
                         </div>
                         <span class="text-muted fs-12"><span class="text-secondary"><i class="fe fe-arrow-up-circle"></i> Total des impayés</span>
@@ -37,14 +37,14 @@
                             <h2 class="m-2 h1"><i class="fe fe-user"></i></h2>
                             <div class="m-2 mr-2">
                                 <ul>
-                                    <li>N° Client: xxx xxxxxxx xxx</li>
-                                    <li>Téléphone: 06 475 43 73</li>
+                                    <li>N° Client: {{auth()->guard('lcde')->user()->numero_abonne}}</li>
+                                    <li>Téléphone: {{auth()->guard('lcde')->user()->telephone}}</li>
                                 </ul>
                             </div><br>
                             <div class="m-2">
                                 <ul class="text-bold">
-                                    <li>Nom: ESSIERE</li>
-                                    <li>Prénom: Johanne Leconte</li>
+                                    <li>Nom: {{auth()->guard('lcde')->user()->nom}}</li>
+                                    <li>Prénom: {{auth()->guard('lcde')->user()->prenom}}</li>
                                 </ul>
                             </div>
                         </div>

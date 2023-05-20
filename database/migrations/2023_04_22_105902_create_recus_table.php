@@ -20,14 +20,12 @@ return new class extends Migration
             $table->double('rendu_monnaie')->nullable();
             //foreign
             $table->unsignedInteger('caissiere_id')->nullable();
-            $table->string('numero_abonne');
+            $table->string('numero_abonne')->nullable();
             $table->string('numero_compte');
-            $table->string('numero_facture');
             $table->timestamps();
             $table->foreign('caissiere_id')->references('id')->on('caissieres');
             $table->foreign('numero_abonne')->references('numero_abonne')->on('abonnes');
             $table->foreign('numero_compte')->references('numero_compte')->on('compte_momos');
-            $table->foreign('numero_facture')->references('numero_facture')->on('factures');
         });
     }
 

@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Abonne;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class AbonneController extends Controller
 {
+    public function showLoginForm()
+    {
+        return view('login');
+    }
+
     public function store(Request $request)
     {
         $rules = [
@@ -52,5 +58,22 @@ class AbonneController extends Controller
                 "message" => collect($e->getMessage())->flatten()
             ], 400);
         }
+    }
+
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'numero_abonne' => 'required',
+        ]);
+
+        $abonne = Abonne::where('numero_abonne', $credentials['numero_abonne'])->first();
+
+        if (!$abonne) {
+            return redirect()->back()->withErrors(['error' => 'Numéro d\'abonné incorrect.']);
+        }
+
+        Auth::guard('lcde')->login($abonne);
+
+        return redirect('/');
     }
 }

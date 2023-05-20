@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Branchement extends Model
@@ -22,5 +24,15 @@ class Branchement extends Model
         static::creating(function ($model) {
             $model->incrementing = false;
         });
+    }
+
+    public function secteur(): BelongsTo
+    {
+        return $this->belongsTo(Secteur::class, 'code_secteur', 'code_secteur');
+    }
+
+    public function pointLivraisons(): HasMany
+    {
+        return $this->hasMany(PointLivraison::class, 'num_branchemment', 'num_branchemment');
     }
 }

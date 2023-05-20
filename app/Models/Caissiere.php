@@ -11,4 +11,6 @@ class Caissiere extends Model
     use HasFactory;
     use SoftDeletes;
     protected $guarded = [];
+
+    
 }

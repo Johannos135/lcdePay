@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use App\Auth\LcdeGuard;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,5 +27,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Auth::extend('lcde', function ($app, $name, array $config) {
+            return new LcdeGuard(Auth::createUserProvider($config['provider']), $app->make('session.store'));
+        });
     }
 }

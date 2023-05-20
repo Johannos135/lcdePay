@@ -3,7 +3,7 @@
                 <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
                 <div class="app-sidebar">
                     <div class="side-header">
-                        <a class="header-brand1" href="{{url('index')}}">
+                        <a class="header-brand1" href="{{url('/')}}">
                             <img src="../assets/images/brand/logo_lcde.png" class="header-brand-img desktop-logo" width="80px" height="70px" alt="logo">
                             <img src="../assets/images/brand/logo_lcde.png" class="header-brand-img toggle-logo" width="80px" height="70px" alt="logo">
                             <img src="../assets/images/brand/logo_lcde.png" class="header-brand-img light-logo" width="80px" height="70px" alt="logo">
@@ -20,8 +20,8 @@
                                 <h3>Main</h3>
                             </li>
                             <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="{{url('index')}}"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Dashboard</span></a>
-                                <a class="side-menu__item" data-bs-toggle="slide" href="{{url('index')}}"><i class="side-menu__icon fe fe-users"></i><span class="side-menu__label">Mes abonnements</span></a>
+                                <a class="side-menu__item" data-bs-toggle="slide" href="{{url('/')}}"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Dashboard</span></a>
+                                <a class="side-menu__item" data-bs-toggle="slide" href="{{route('abonnement')}}"><i class="side-menu__icon fe fe-users"></i><span class="side-menu__label">Mes abonnements</span></a>
                                 <a class="side-menu__item" data-bs-toggle="slide" href="{{url('index')}}"><i class="side-menu__icon fa fa-newspaper-o"></i><span class="side-menu__label">Mes factures</span></a>
                                 <a class="side-menu__item" data-bs-toggle="slide" href="{{url('index')}}"><i class="side-menu__icon fa fa-credit-card"></i><span class="side-menu__label">Mes paiements</span></a>
                             </li>
