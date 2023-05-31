@@ -19,7 +19,7 @@ return new class extends Migration
             $table->double('montant_recu');
             $table->double('rendu_monnaie')->nullable();
             //foreign
-            $table->unsignedInteger('caissiere_id')->nullable();
+            $table->unsignedBigInteger('caissiere_id')->nullable();
             $table->string('numero_abonne')->nullable();
             $table->string('numero_compte');
             $table->timestamps();
