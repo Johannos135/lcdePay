@@ -18,11 +18,13 @@
                         <table id="file-datatable" class="table border-top table-bordered mb-0">
                             <thead>
                                 <tr>
+                                    <th>N° Facture</th>
+                                    <th>Ancien Index</th>
+                                    <th>Nouvel Index</th>
                                     <th>N° Abonnement</th>
-                                    <th>Catégorie</th>
-                                    <th>Direction</th>
-                                    <th>Agence</th>
-                                    <th>Secteur</th>
+                                    <th>Période</th>
+                                    <th>Volume consommé</th>
+                                    <th>Montant</th>
                                     <th class="text-center">Actions</th>
                                 </tr>
                             </thead>
@@ -30,11 +32,13 @@
                                 @if (!empty($datas))
                                     @foreach ($datas as $item)
                                         <tr>
+                                            <td class="text-nowrap align-middle">{{ $item->numero_facture }}</td>
+                                            <td class="text-nowrap align-middle">{{ $item->ancien_index }}</td>
+                                            <td class="text-nowrap align-middle">{{ $item->nouvel_index }}</td>
                                             <td class="text-nowrap align-middle">{{ $item->num_abonnement }}</td>
-                                            <td class="text-nowrap align-middle">{{ $item->categorie->libelle }}</td>
-                                            <td class="text-nowrap align-middle">{{ $item->direction->nom_direction }}</td>
-                                            <td class="text-nowrap align-middle">{{ $item->agence->nom_agence }}</td>
-                                            <td class="text-nowrap align-middle">{{ $item->secteur->libelle }}</td>
+                                            <td class="text-nowrap align-middle">{{ $item->libelle }}</td>
+                                            <td class="text-nowrap align-middle">{{ $item->volume_consomme }}</td>
+                                            <td class="text-nowrap align-middle">{{ $item->montant_facture }}</td>
                                             <td class="text-center align-middle">
                                                 <div class="btn-group align-top">
                                                     <a class="btn btn-sm btn-primary badge"

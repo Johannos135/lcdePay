@@ -39,7 +39,7 @@
                                         <div class="tab-pane active" id="tab5">
                                             <div class="wrap-input100 validate-input input-group" data-bs-validate="Un numéro d'abonné valide est requis: AB000547">
                                                 <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
-                                                    <i class="zmdi zmdi-text text-muted" aria-hidden="true"></i>
+                                                    <i class="fa fa-user" aria-hidden="true"></i>
                                                 </a>
 
                                                     <input id="numero_abonne" class="input100 form-control" placeholder="Numéro abonné" type="text" name="numero_abonne" :value="old('numero_abonne')" required autofocus autocomplete="username" />

@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Facture extends Model
 {
     use HasFactory;
-//    use SoftDeletes;
+    //    use SoftDeletes;
     protected $guarded = [];
 
 
@@ -40,5 +40,10 @@ class Facture extends Model
     private function secteur(): belongsTo
     {
         return $this->belongsTo(Secteur::class, 'code_secteur', 'code_secteur');
+    }
+
+    private function periode(): belongsTo
+    {
+        return $this->belongsTo(PeriodeFacturation::class, 'code_periode', 'code_periode');
     }
 }

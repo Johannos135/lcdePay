@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AbonneController;
 use App\Http\Controllers\AbonnementController;
+use App\Http\Controllers\FactureController;
 use App\Http\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,10 @@ Route::middleware('subscriber')->group(function () {
         '/abonnements',
         [AbonnementController::class, 'index']
     )->name('abonnement');
+    Route::get(
+        '/impayees',
+        [FactureController::class, 'index']
+    )->name('facture');
 });
 
 Route::get('login', [AbonneController::class, 'showLoginForm'])->name('login');
