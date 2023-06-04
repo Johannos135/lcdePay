@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
     @section('styles')
-
-
+<style>
+    .login {
+        border: 1px solid #41a0e5;
+        border-radius: 5px;
+    }
+</style>
 
     @endsection
 
@@ -27,9 +31,7 @@
                         </div>
                          <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
                             @csrf
-                            <span class="login100-form-title pb-5">
-                                Connexion
-                            </span>
+                 
                             <div class="panel panel-primary">
                                 <div class="tab-menu-heading">
 
@@ -37,7 +39,7 @@
                                 <div class="panel-body tabs-menu-body p-0 pt-5">
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab5">
-                                            <div class="wrap-input100 validate-input input-group" data-bs-validate="Un numéro d'abonné valide est requis: AB000547">
+                                            <div class="wrap-input100 login validate-input input-group" data-bs-validate="Un numéro d'abonné valide est requis: AB000547">
                                                 <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
                                                     <i class="fa fa-user" aria-hidden="true"></i>
                                                 </a>
@@ -62,8 +64,14 @@
                                                         {{ __('Se connecter') }}
                                                     </button>
                                                 </div>
+                                                <div class="container-login100-form-btn">
+
+                                                    <button class="login100-form-btn btn-outline-primary">
+                                                        {{ __('Payer sans se connecter') }}
+                                                    </button>
+                                                </div>
                                                 <div class="text-center pt-3">
-                                                    <p class="text-dark mb-0">Vous voulez payer pour un proche?<a href="#" class="text-primary ms-1">Payer sans se connecter</a></p>
+                                                    <p class="text-dark mb-0">Vous êtes un administrateur?<a href="#" class="text-primary ms-1">Admin</a></p>
                                                 </div>
 
                                             </div>

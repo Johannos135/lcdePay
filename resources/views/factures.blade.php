@@ -7,7 +7,7 @@
         <h1 class="page-title">Mes factures impayées</h1>
         <div>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Client</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Abonné</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Factures impayées</li>
             </ol>
         </div>

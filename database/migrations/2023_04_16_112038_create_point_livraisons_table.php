@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('point_livraisons', function (Blueprint $table) {
             $table->string('num_point_livraison')->primary();
             $table->integer('calibre');
-            $table->string('nom_proprietaire');
-            $table->string('prenom_proprietaire');
             $table->string('adresse');
             $table->string('quartier');
             $table->string('num_branchemment'); //foreign
+            $table->string('num_abonne');
             $table->timestamps();
             $table->foreign('num_branchemment')->references('num_branchemment')->on('branchements');
+            $table->foreign('num_abonne')->references('numero_abonne')->on('abonnes');
             $table->softDeletes();
         });
     }

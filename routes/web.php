@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AbonneController;
 use App\Http\Controllers\AbonnementController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FactureController;
 use App\Http\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('subscriber')->group(function () {
     Route::get(
         '/',
-        [Dashboard::class, 'render']
+        [DashboardController::class, 'dashboard']
     )->name('dashboard');
     Route::get(
         '/abonnements',
@@ -30,6 +31,14 @@ Route::middleware('subscriber')->group(function () {
         '/impayees',
         [FactureController::class, 'index']
     )->name('facture');
+    Route::get(
+        '/payees',
+        [FactureController::class, 'FacturePaye']
+    )->name('facture.payee');
+    Route::post(
+        '/paiement',
+        [FactureController::class, 'paySingleFacture']
+    )->name('facture.paiement');
 });
 
 Route::get('login', [AbonneController::class, 'showLoginForm'])->name('login');

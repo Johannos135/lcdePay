@@ -17,6 +17,6 @@ class ListeAbonnements extends Component
     public function render()
     {
         $num_abonne = Auth::guard('lcde')->user()->numero_abonne;
-        return view('livewire.liste-abonnements', ['datas' => Abonnement::with(['categorie', 'direction', 'agence', 'secteur'])->where('num_abonne', $num_abonne)->orWhere('num_abonnement', 'LIKE', "%{$this->src_val}%")->paginate(10)]);
+        return view('livewire.liste-abonnements', ['datas' => Abonnement::with(['categorie', 'rythmeFacturation', 'agence', 'pointLivraison'])->where('num_abonne', $num_abonne)->paginate(10)]);
     }
 }

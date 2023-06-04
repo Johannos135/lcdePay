@@ -23,7 +23,7 @@
                                 <a class="side-menu__item" data-bs-toggle="slide" href="{{url('/')}}"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Dashboard</span></a>
                                 <a class="side-menu__item" data-bs-toggle="slide" href="{{route('abonnement')}}"><i class="side-menu__icon fe fe-users"></i><span class="side-menu__label">Mes abonnements</span></a>
                                 <a class="side-menu__item" data-bs-toggle="slide" href="{{route('facture')}}"><i class="side-menu__icon fa fa-newspaper-o"></i><span class="side-menu__label">Mes factures impayées</span></a>
-                                <a class="side-menu__item" data-bs-toggle="slide" href="{{url('index')}}"><i class="side-menu__icon fa fa-credit-card"></i><span class="side-menu__label">Mes paiements</span></a>
+                                <a class="side-menu__item" data-bs-toggle="slide" href="{{route('facture.payee')}}"><i class="side-menu__icon fa fa-credit-card"></i><span class="side-menu__label">Mes paiements</span></a>
                             </li>
 
                         </ul>

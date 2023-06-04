@@ -2,6 +2,7 @@
     <!-- ROW OPEN -->
     <div class="row row-cards">
         <div class="col-lg-12 col-xl-12">
+       
             <div class="card">
                 <div class="card-header border-bottom-0 p-4">
                     <h2 class="card-title"></h2>
@@ -15,12 +16,12 @@
                             <thead>
                                 <tr>
                                     <th>N° Facture</th>
-                                    <th>Ancien Index</th>
-                                    <th>Nouvel Index</th>
+                                    <th>N° Reçu</th>
+                                    <th>Numéro Momo</th>
+                                    <th>ID de transaction</th>
                                     <th>N° Abonnement</th>
-                                    <th>Période</th>
-                                    <th>Volume consommé</th>
-                                    <th>Montant</th>
+                                    <th>Montant Reçu</th>
+                                    <th>Date paiement</th>
                                     <th class="text-center">Actions</th>
                                 </tr>
                             </thead>
@@ -29,18 +30,16 @@
                                     @foreach ($datas as $item)
                                         <tr data-facture-id="{{ $item->numero_facture }}">
                                             <td class="text-nowrap align-middle">{{ $item->numero_facture }}</td>
-                                            <td class="text-nowrap align-middle">{{ $item->ancien_index }}</td>
-                                            <td class="text-nowrap align-middle">{{ $item->nouvel_index }}</td>
+                                            <td class="text-nowrap align-middle">{{ $item->num_recu }}</td>
+                                            <td class="text-nowrap align-middle">{{ $item->numero_compte_momo }}</td>
+                                            <td class="text-nowrap align-middle">{{ $item->transaction_id }}</td>
                                             <td class="text-nowrap align-middle">{{ $item->num_abonnement }}</td>
-                                            <td class="text-nowrap align-middle">{{ $item->libelle }}</td>
-                                            <td class="text-nowrap align-middle">{{ $item->volume_consomme }}</td>
-                                            <td class="text-nowrap align-middle">{{ $item->montant_facture }}</td>
+                                            <td class="text-nowrap align-middle">{{ $item->montant_recu }} FCFA</td>
+                                            <td class="text-nowrap align-middle">{{ $item->created_at }}</td>
                                             <td class="text-center align-middle">
                                                 <div class="btn-group align-top">
-                                                    <a class="btn btn-sm btn-primary badge" href="#"
-                                                        type="button"><i class="fa fa-info-circle"></i></a>
-                                                        <a id="datatable" class="modal-effect btn btn-sm btn-secondary badge" data-bs-effect="effect-fall"
-                            data-bs-toggle="modal" href="#modaldemo8-{{$item->numero_facture}}"  type="button"><i class="fa fa-money"></i></a>
+                                                        <a id="datatable" class="modal-effect btn btn-sm btn-primary badge" data-bs-effect="effect-fall"
+                            data-bs-toggle="modal" href="#modaldemo8-{{$item->numero_facture}}"  type="button"><i class="fa fa-info-circle"></i></a>
                                                 </div>
                                             </td>
                                         </tr>

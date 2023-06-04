@@ -4,11 +4,11 @@
 @section('content')
     <!-- PAGE-HEADER -->
     <div class="page-header">
-        <h1 class="page-title">Mes abonnements</h1>
+        <h1 class="page-title">Mes factures payées</h1>
         <div>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Abonné</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Abonnement</li>
+                <li class="breadcrumb-item active" aria-current="page">Factures payées</li>
             </ol>
         </div>
     </div>
@@ -16,7 +16,7 @@
         <div class="alert alert-success text-center">{{ session('message') }}</div>
     @endif
     <!-- PAGE-HEADER END -->
-    @livewire('liste-abonnements')
+    @livewire('liste-paiements')
 @endsection
 @livewireScripts
 @section('scripts')

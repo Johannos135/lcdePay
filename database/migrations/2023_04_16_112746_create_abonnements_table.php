@@ -18,15 +18,15 @@ return new class extends Migration
             //foreignKey
             $table->unsignedInteger('code_categorie');
             $table->unsignedInteger('num_agence');
-            $table->unsignedInteger('num_direction');
-            $table->string('code_secteur');
+            $table->unsignedInteger('rythme_facturation_id');
             $table->string('num_abonne');
+            $table->string('num_point_livraison');
             $table->timestamps();
             $table->foreign('code_categorie')->references('code_categorie')->on('categories');
             $table->foreign('num_agence')->references('numero_agence')->on('agences');
-            $table->foreign('num_direction')->references('numero_direction')->on('directions');
-            $table->foreign('code_secteur')->references('code_secteur')->on('secteurs');
+            $table->foreign('rythme_facturation_id')->references('id')->on('rythme_facturations');
             $table->foreign('num_abonne')->references('numero_abonne')->on('abonnes');
+            $table->foreign('num_point_livraison')->references('num_point_livraison')->on('point_livraisons');
             $table->softDeletes();
         });
     }

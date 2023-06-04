@@ -40,13 +40,13 @@ class Abonnement extends Model
         return $this->belongsTo(Agence::class, 'num_agence', 'numero_agence');
     }
 
-    public function direction(): BelongsTo
+    public function rythmeFacturation(): BelongsTo
     {
-        return $this->belongsTo(Direction::class, 'num_direction', 'numero_direction');
+        return $this->belongsTo(RythmeFacturation::class, 'rythme_facturation_id', 'id');
     }
 
-    public function secteur(): BelongsTo
+    public function pointLivraison(): BelongsTo
     {
-        return $this->belongsTo(Secteur::class, 'code_secteur', 'code_secteur');
+        return $this->belongsTo(PointLivraison::class, 'num_point_livraison', 'num_point_livraison');
     }
 }
