@@ -18,14 +18,15 @@ return new class extends Migration
             $table->string('type_recu')->nullable();
             $table->double('montant_recu');
             $table->double('rendu_monnaie')->nullable();
+            $table->string('operateur')->nullable();
+            $table->string('numero_compte_momo')->primary();
+            $table->string('transaction_id')->nullable();
             //foreign
             $table->unsignedBigInteger('caissiere_id')->nullable();
             $table->string('numero_abonne')->nullable();
-            $table->string('numero_compte');
             $table->timestamps();
             $table->foreign('caissiere_id')->references('id')->on('caissieres');
             $table->foreign('numero_abonne')->references('numero_abonne')->on('abonnes');
-            $table->foreign('numero_compte')->references('numero_compte')->on('compte_momos');
         });
     }
 

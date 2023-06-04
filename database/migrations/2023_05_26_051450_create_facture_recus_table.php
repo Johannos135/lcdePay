@@ -17,9 +17,6 @@ return new class extends Migration
             $table->primary(["numero_facture", "num_recu"]);
             $table->string("numero_facture")->unique();
             $table->string("num_recu")->unique();
-            $table->string('operateur')->nullable();
-            $table->string('numero_compte_momo')->primary();
-            $table->string('transaction_id')->nullable();
             $table->timestamps();
             $table->foreign("numero_facture")->references("numero_facture")->on("factures")->cascadeOnDelete();
             $table->foreign("num_recu")->references("num_recu")->on("recus")->cascadeOnDelete();
