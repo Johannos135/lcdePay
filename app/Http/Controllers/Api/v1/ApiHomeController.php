@@ -24,7 +24,12 @@ class ApiHomeController extends Controller
                         ->from('facture_recus');
                 })
                 ->sum('factures.montant_facture');
-
+            $datas = Facture::join('facture_recus', 'factures.numero_facture', '=', 'facture_recus.numero_facture')
+                ->join('recus', 'facture_recus.num_recu', '=', 'recus.num_recu')
+                ->join('abonnements', 'factures.num_abonnement', '=', 'abonnements.num_abonnement')
+                ->where('abonnements.num_abonne', $numeroAbonne)
+                ->select('factures.*', 'recus.*')
+                ->first();
             if (!$user) {
                 return response()->json(['message' => 'Numéro d\'abonné invalide'], 401);
             }
@@ -35,6 +40,7 @@ class ApiHomeController extends Controller
                 'message' => "Information personnelle de l'abonné",
                 'data' => $user,
                 'total' => $sum,
+                'facture' => $datas
             ], 200);
         } catch (Exception $e) {
             return response()->json([

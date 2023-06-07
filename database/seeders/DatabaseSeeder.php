@@ -151,7 +151,7 @@ class DatabaseSeeder extends Seeder
         // RYTHME FACTURATION
         $rythmes = [
             ['libelle' => 'MENSUEL'],
-            ['libelle' => 'BIMENSTRUEL'],
+            ['libelle' => 'BIMESTRIEL'],
             ['libelle' => 'TRIMESTRIEL'],
         ];
 

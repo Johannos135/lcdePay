@@ -18,7 +18,7 @@ return new class extends Migration
             //foreignKey
             $table->unsignedInteger('code_categorie');
             $table->unsignedInteger('num_agence');
-            $table->unsignedInteger('rythme_facturation_id');
+            $table->unsignedBigInteger('rythme_facturation_id');
             $table->string('num_abonne');
             $table->string('num_point_livraison');
             $table->timestamps();

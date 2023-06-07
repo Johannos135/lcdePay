@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AbonneController;
 use App\Http\Controllers\Api\v1\ApiAbonneController;
+use App\Http\Controllers\Api\v1\ApiAbonnementController;
 use App\Http\Controllers\Api\v1\ApiFactureController;
 use App\Http\Controllers\Api\v1\ApiHomeController;
 use App\Http\Controllers\BillController;
@@ -22,13 +23,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+Route::get('/abonnements/{numero_abonne}', [ApiAbonnementController::class, 'index']);
 Route::post('/login', [ApiAbonneController::class, 'login']);
 Route::get('/impayees/{numero_abonne}', [ApiFactureController::class, 'getFactureImpaye']);
-Route::get('/payees/{numero_abonne}', [ApiFactureController::class, 'getFacturePaye']);
 Route::middleware('token.auth')->group(function () {
+    Route::get('/payees/{numero_abonne}', [ApiFactureController::class, 'getFacturePaye']);
     Route::get('/infoUser/{numero_abonne}', [ApiAbonneController::class, 'getAbonneById']);
     Route::get('/home/{numero_abonne}', [ApiHomeController::class, 'home']);
+
     Route::prefix('abonnes')->group(function () {
         Route::post('/', [AbonneController::class, 'store']);
     });

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->enum('genre', ['M', 'F']);
             $table->string('adresse');
             $table->string('complement_adresse')->nullable();
+            $table->string('token')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

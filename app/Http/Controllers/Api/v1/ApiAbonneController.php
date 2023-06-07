@@ -50,6 +50,7 @@ class ApiAbonneController extends Controller
             ], 400);
         }
     }
+
     public function getAbonneById($numeroAbonne)
     {
         // Effectuez les vérifications nécessaires pour valider le numéro d'abonné dans votre base de données
