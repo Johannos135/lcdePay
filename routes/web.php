@@ -42,4 +42,6 @@ Route::middleware('subscriber')->group(function () {
 });
 
 Route::get('login', [AbonneController::class, 'showLoginForm'])->name('login');
+Route::get('form-sans', [AbonneController::class, 'showFormSans'])->name('sans');
+Route::post('form-sans', [FactureController::class, 'getFactureDetails'])->name('fact-det');
 Route::post('login', [AbonneController::class, 'login']);

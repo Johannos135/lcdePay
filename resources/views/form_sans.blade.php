@@ -7,6 +7,13 @@
             border-radius: 5px;
         }
 
+        .annuler a {
+            font-size: 16px;
+            background: -webkit-linear-gradient(#eee, #078e07);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         .annuler:hover a {
             font-size: 16px;
             background: -webkit-linear-gradient(#eee, #fff);
@@ -34,7 +41,7 @@
                             height="80px" alt="">
                     </div>
                 </div>
-                <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+                <form class="login100-form validate-form" method="POST" action="{{ route('fact-det') }}">
                     @csrf
 
                     <div class="panel panel-primary">
@@ -50,9 +57,10 @@
                                             <i class="fa fa-user" aria-hidden="true"></i>
                                         </a>
 
-                                        <input id="numero_abonne" class="input100 form-control" placeholder="Numéro abonné"
-                                            type="text" name="numero_abonne" :value="old('numero_abonne')" required
-                                            autofocus autocomplete="username" />
+                                        <input id="numero_facture" class="input100 form-control"
+                                            placeholder="Numéro facture" type="text" name="numero_facture"
+                                            :value="old('numero_fature')" required autofocus
+                                            autocomplete="numero_facture" />
 
                                     </div>
                                     <div>
@@ -68,17 +76,16 @@
                                     </div>
                                     <div class="container-login100-form-btn">
 
-                                        <button class="login100-form-btn btn-primary">
-                                            {{ __('Se connecter') }}
+                                        <button class="login100-form-btn btn-outline-primary">
+                                            {{ __('Suivant') }}
                                         </button>
                                     </div>
                                     <div class="container-login100-form-btn">
-                                        <button type="button" class="annuler login100-form-btn btn-outline-primary">
-                                            <a href="{{ route('sans') }}">
-                                                {{ __('Payer sans se connecter') }}</a>
-                                        </button>
 
+                                        <button type="button" class="annuler login100-form-btn btn-outline-success">
+                                            <a href="{{ route('login') }}">{{ __('Précédent') }}</a></button>
                                     </div>
+
                                     <div class="text-center pt-3">
                                         <p class="text-dark mb-0">Vous êtes un administrateur?<a href="#"
                                                 class="text-primary ms-1">Admin</a></p>
@@ -100,7 +107,6 @@
         <!-- GENERATE OTP JS -->
         <script src="{{ asset('assets/js/generate-otp.js') }}"></script>
         <script src="{{ asset('assets/plugins/sweet-alert/sweetalert.min.js') }}"></script>
-        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script> --}}
         <script>
             @if ($message = session('failed'))
                 $(document).ready(function() {

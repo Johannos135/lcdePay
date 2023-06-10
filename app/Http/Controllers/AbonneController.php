@@ -14,6 +14,10 @@ class AbonneController extends Controller
     {
         return view('login');
     }
+    public function showFormSans()
+    {
+        return view('form_sans');
+    }
 
     public function store(Request $request)
     {
@@ -69,7 +73,8 @@ class AbonneController extends Controller
         $abonne = Abonne::where('numero_abonne', $credentials['numero_abonne'])->first();
 
         if (!$abonne) {
-            return redirect()->back()->withErrors(['error' => 'Numéro d\'abonné incorrect.']);
+            session()->flash('failed', 'Veuillez entrer un numéro abonné vailde!');
+            return redirect()->back();
         }
 
         Auth::guard('lcde')->login($abonne);

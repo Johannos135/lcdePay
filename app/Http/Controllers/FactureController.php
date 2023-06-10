@@ -21,17 +21,17 @@ class FactureController extends Controller
 
     public function getFactureDetails(Request $request)
     {
-        $factureId = $request->input('factureId');
+        $factureId = $request->input('numero_facture');
 
         // Retrieve the facture details based on the ID
-        $facture = Facture::where('numero_facture', $factureId)->first();
+        $facture = Facture::with(['abonnement'])->where('numero_facture', $factureId)->first();
 
-        // Generate the HTML content for the modal body
-        $html = '<h6>Facture Details</h6>';
-        $html .= '<p>Facture ID: ' . $facture->numero_facture . '</p>';
-        // Add more details as needed
+        if (!$facture) {
+            session()->flash('failed', 'Facture non trouvée!');
+            return redirect()->back();
+        }
 
-        return $html;
+        return view('facture_payment', compact('facture'));
     }
 
     public function paySingleFacture(Request $request)
@@ -57,6 +57,7 @@ class FactureController extends Controller
         $facture = Facture::where('numero_facture', $request['num_facture'])->first();
         $facture->recus()->attach($recu);
 
-        return redirect()->route('abonnement');
+        session()->flash('success', 'Paiement effectué avec succès!');
+        return redirect()->back();
     }
 }

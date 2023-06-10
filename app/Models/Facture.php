@@ -32,17 +32,17 @@ class Facture extends Model
         return $this->belongsToMany(Recu::class, 'facture_recus', 'numero_facture', 'num_recu')->withTimestamps();
     }
 
-    private function abonnement(): belongsTo
+    public function abonnement(): belongsTo
     {
         return $this->belongsTo(Abonnement::class, 'num_abonnement', 'num_abonnement');
     }
 
-    private function secteur(): belongsTo
+    public function secteur(): belongsTo
     {
         return $this->belongsTo(Secteur::class, 'code_secteur', 'code_secteur');
     }
 
-    private function periode(): belongsTo
+    public function periode(): belongsTo
     {
         return $this->belongsTo(PeriodeFacturation::class, 'code_periode', 'code_periode');
     }
