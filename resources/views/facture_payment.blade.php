@@ -46,9 +46,14 @@
                             {{ $facture->abonnement->abonne->prenom }}</p>
                         <p><i class="fa fa-file-text-o"></i>&nbsp;&nbsp;{{ $facture->abonnement->num_abonnement }}
                         </p>
-                        <p class="text-danger"><i
-                                class="fa fa-credit-card"></i>&nbsp;&nbsp;<strong>{{ $facture->montant_facture }}
-                                FCFA</strong></p>
+                        <p class="text-danger"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;<strong>
+                                @if ($facture->recus->count() > 0)
+                                    {{ $facture->montant_facture }}
+                                @else
+                                    0
+                                @endif
+                                FCFA
+                            </strong></p>
                     </div>
                 </div>
                 <form class="login100-form validate-form" method="POST" action="#">
@@ -58,7 +63,14 @@
                         <div class="tab-menu-heading">
 
                         </div>
-                        <small class="text-danger m-2">Veuillez rentrer un numéro Mobile Money valide</small>
+                        <small class="text-danger m-2">
+                            @if ($facture->recus->count() > 0)
+                                Veuillez rentrer un numéro Mobile Money valide
+                            @else
+                                <strong>Cher abonné veuillez noter que cete facture a déjà été payée,<br>Merci pour votre
+                                    fidélité!!!</strong>
+                            @endif
+                        </small>
                         <div class="panel-body tabs-menu-body p-0 pt-3">
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab5">
@@ -69,9 +81,9 @@
                                         </a>
 
                                         <input id="numero_telephone" class="input100 form-control"
-                                            placeholder="Numéro téléphone" type="text" name="numero_telephone"
-                                            :value="old('numero_telephone')" required autofocus
-                                            autocomplete="numero_telephone" />
+                                            @if ($facture->recus->count() == 0) readonly @endif placeholder="Numéro téléphone"
+                                            type="text" name="numero_telephone" :value="old('numero_telephone')" required
+                                            autofocus autocomplete="numero_telephone" />
 
                                     </div>
                                     <div>
@@ -87,7 +99,8 @@
                                     </div>
                                     <div class="container-login100-form-btn">
 
-                                        <button class="login100-form-btn btn-outline-primary">
+                                        <button @if ($facture->recus->count() == 0) disabled @endif
+                                            class="login100-form-btn btn-outline-primary">
                                             {{ __('Procéder au paiement') }}
                                         </button>
 
