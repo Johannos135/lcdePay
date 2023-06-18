@@ -53,5 +53,16 @@
                     );
             });
         @endif
+
+        @if ($message = session('failed'))
+            $(document).ready(function() {
+                $('body').removeClass('timer-alert'),
+                    swal(
+                        'Echec!',
+                        '{{ $message }}',
+                        'error',
+                    );
+            });
+        @endif
     </script>
 @endsection
